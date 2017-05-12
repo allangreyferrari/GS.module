@@ -14,3 +14,17 @@ C:\Data\Dev\Innovacion\GS.module\GS.module.logic\obj\Debug\GS.module.logic.pdb
 C:\Data\Dev\Innovacion\GS.module\GS.module.logic\bin\Debug\Db\Configuration.mdf
 C:\Data\Dev\Innovacion\GS.module\GS.module.logic\bin\Debug\Db\Configuration_log.ldf
 C:\Data\Dev\Innovacion\GS.module\GS.module.logic\bin\Debug\GS.module.entities.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\GS.module.logic.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\GS.module.logic.pdb
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\GS.module.data.access.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\GS.module.entities.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\GS.module.data.access.pdb
+C:\Data\Dev\Startup\GS.module\GS.module.logic\bin\Debug\GS.module.entities.pdb
+C:\Data\Dev\Startup\GS.module\GS.module.logic\obj\Debug\GS.module.logic.csprojResolveAssemblyReference.cache
+C:\Data\Dev\Startup\GS.module\GS.module.logic\obj\Debug\GS.module.logic.dll
+C:\Data\Dev\Startup\GS.module\GS.module.logic\obj\Debug\GS.module.logic.pdb
