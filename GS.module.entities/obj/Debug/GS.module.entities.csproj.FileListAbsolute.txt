@@ -8,3 +8,7 @@ C:\Data\Dev\Startup\GS.module\GS.module.entities\bin\Debug\GS.module.entities.pd
 C:\Data\Dev\Startup\GS.module\GS.module.entities\obj\Debug\GS.module.entities.dll
 C:\Data\Dev\Startup\GS.module\GS.module.entities\obj\Debug\GS.module.entities.pdb
 C:\Data\Dev\Startup\GS.module\GS.module.entities\obj\Debug\GS.module.entities.csprojResolveAssemblyReference.cache
+C:\Data\Starup\GS.module.entities\bin\Debug\GS.module.entities.dll
+C:\Data\Starup\GS.module.entities\bin\Debug\GS.module.entities.pdb
+C:\Data\Starup\GS.module.entities\obj\Debug\GS.module.entities.dll
+C:\Data\Starup\GS.module.entities\obj\Debug\GS.module.entities.pdb

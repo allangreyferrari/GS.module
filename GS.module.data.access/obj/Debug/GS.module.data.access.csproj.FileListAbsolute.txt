@@ -24,3 +24,15 @@ C:\Data\Dev\Startup\GS.module\GS.module.data.access\bin\Debug\GS.module.entities
 C:\Data\Dev\Startup\GS.module\GS.module.data.access\obj\Debug\GS.module.data.access.csprojResolveAssemblyReference.cache
 C:\Data\Dev\Startup\GS.module\GS.module.data.access\obj\Debug\GS.module.data.access.dll
 C:\Data\Dev\Startup\GS.module\GS.module.data.access\obj\Debug\GS.module.data.access.pdb
+C:\Data\Starup\GS.module.data.access\bin\Debug\GS.module.data.access.dll
+C:\Data\Starup\GS.module.data.access\bin\Debug\GS.module.data.access.pdb
+C:\Data\Starup\GS.module.data.access\bin\Debug\GS.module.entities.dll
+C:\Data\Starup\GS.module.data.access\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Data\Starup\GS.module.data.access\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Data\Starup\GS.module.data.access\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Data\Starup\GS.module.data.access\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Data\Starup\GS.module.data.access\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Data\Starup\GS.module.data.access\bin\Debug\GS.module.entities.pdb
+C:\Data\Starup\GS.module.data.access\obj\Debug\GS.module.data.access.csprojResolveAssemblyReference.cache
+C:\Data\Starup\GS.module.data.access\obj\Debug\GS.module.data.access.dll
+C:\Data\Starup\GS.module.data.access\obj\Debug\GS.module.data.access.pdb
