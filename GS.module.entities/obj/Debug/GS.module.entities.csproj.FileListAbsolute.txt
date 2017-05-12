@@ -1,0 +1,5 @@
+C:\Data\Dev\Innovacion\GS.module\GS.module.entities\bin\Debug\GS.module.entities.pdb
+C:\Data\Dev\Innovacion\GS.module\GS.module.entities\obj\Debug\GS.module.entities.csprojResolveAssemblyReference.cache
+C:\Data\Dev\Innovacion\GS.module\GS.module.entities\obj\Debug\GS.module.entities.pdb
+C:\Data\Dev\Innovacion\GS.module\GS.module.entities\bin\Debug\GS.module.entities.dll
+C:\Data\Dev\Innovacion\GS.module\GS.module.entities\obj\Debug\GS.module.entities.dll

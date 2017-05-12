@@ -1,0 +1,9 @@
+C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\bin\Release\GS.Helpdesk.entities.dll
+C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\bin\Release\GS.Helpdesk.entities.pdb
+C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\obj\Release\GS.Helpdesk.entities.dll
+C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\obj\Release\GS.Helpdesk.entities.pdb
+C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\bin\Release\GS.Helpdesk.entities.dll
+C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\bin\Release\GS.Helpdesk.entities.pdb
+C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\obj\Release\GS.Helpdesk.entities.dll
+C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\obj\Release\GS.Helpdesk.entities.pdb
+C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\obj\Release\GS.Helpdesk.entities.csprojResolveAssemblyReference.cache

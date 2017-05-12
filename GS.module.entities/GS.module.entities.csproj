@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94ECE3D0-3A52-4190-ACE2-9C86F8EC037C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GS.module.entities</RootNamespace>
+    <AssemblyName>GS.module.entities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Internal\Column.cs" />
+    <Compile Include="Base\Helper.cs" />
+    <Compile Include="Base\Constant.cs" />
+    <Compile Include="Internal\Procedure.cs" />
+    <Compile Include="Internal\Query.cs" />
+    <Compile Include="Base\Transaction.cs" />
+    <Compile Include="main.cs" />
+    <Compile Include="Primary\BasicFifty.cs" />
+    <Compile Include="Primary\BasicFiftyCollection.cs" />
+    <Compile Include="Primary\BasicFive.cs" />
+    <Compile Include="Primary\BasicFiveCollection.cs" />
+    <Compile Include="Primary\BasicHundred.cs" />
+    <Compile Include="Primary\StringHundred.cs" />
+    <Compile Include="Primary\BasicHundredCollection.cs" />
+    <Compile Include="Primary\StringHundredCollection.cs" />
+    <Compile Include="Primary\BasicSeventy.cs" />
+    <Compile Include="Primary\StringSeventy.cs" />
+    <Compile Include="Primary\BasicSeventyCollection.cs" />
+    <Compile Include="Primary\StringSeventyCollection.cs" />
+    <Compile Include="Primary\StringFifty.cs" />
+    <Compile Include="Primary\StringFiftyCollection.cs" />
+    <Compile Include="Primary\BasicTen.cs" />
+    <Compile Include="Primary\BasicTenCollection.cs" />
+    <Compile Include="Primary\BasicThirty.cs" />
+    <Compile Include="Primary\StringThirty.cs" />
+    <Compile Include="Primary\BasicThirtyCollection.cs" />
+    <Compile Include="Primary\StringThirtyCollection.cs" />
+    <Compile Include="Primary\BasicTwenty.cs" />
+    <Compile Include="Primary\StringTwenty.cs" />
+    <Compile Include="Primary\BasicTwentyCollection.cs" />
+    <Compile Include="Primary\StringTwentyCollection.cs" />
+    <Compile Include="Primary\StringTen.cs" />
+    <Compile Include="Primary\StringTenCollection.cs" />
+    <Compile Include="Primary\StringFive.cs" />
+    <Compile Include="Primary\StringFiveCollection.cs" />
+    <Compile Include="Primary\BasicTwo.cs" />
+    <Compile Include="Primary\StringTwo.cs" />
+    <Compile Include="Primary\BasicTwoCollection.cs" />
+    <Compile Include="Primary\StringTwoCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

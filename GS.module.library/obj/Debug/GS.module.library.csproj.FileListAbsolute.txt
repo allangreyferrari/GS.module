@@ -1,0 +1,5 @@
+C:\Data\Dev\Innovacion\GS.module\GS.module.library\bin\Debug\GS.module.library.dll
+C:\Data\Dev\Innovacion\GS.module\GS.module.library\bin\Debug\GS.module.library.pdb
+C:\Data\Dev\Innovacion\GS.module\GS.module.library\obj\Debug\GS.module.library.csprojResolveAssemblyReference.cache
+C:\Data\Dev\Innovacion\GS.module\GS.module.library\obj\Debug\GS.module.library.dll
+C:\Data\Dev\Innovacion\GS.module\GS.module.library\obj\Debug\GS.module.library.pdb
