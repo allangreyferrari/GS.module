@@ -7,7 +7,7 @@
 
     <title></title>
     <script src="root.js"></script>
-    <script>
+    <script> 
         apeendElement("css", "/moduleresources/css/bootstrap.min.css");
         apeendElement("css", "/moduleresources/css/font-gs.min.css");
         apeendElement("css", "/moduleresources/css/home.css");
@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="#" class="navbar-brand" id="hreflogo">
-                        <img src="https://intranet.gruposilvestre.com.pe/resources/images/img-logo.png" alt="Grupo Silvestre | Merlín" id="logo" style="height:50px; margin-top:-12px; padding-top:0px">
+                        <img src="../../../resources/images/img-logo.png" alt="Grupo Silvestre | Merlín" id="logo" style="height:50px; margin-top:-12px; padding-top:0px">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="options">
@@ -57,7 +57,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#"><i class="fa fa-fw fa-user">&nbsp;</i>Ver Perfil</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#" id="sectionclosed" onclick="ClosedSession();return false;"><i class="fa fa-fw fa-power-off">&nbsp;</i>Salir</a></li>
+                                <li><a href="#" id="sectionclosed" onclick="closedsession(); return false;"><i class="fa fa-fw fa-power-off">&nbsp;</i>Salir</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -73,8 +73,8 @@
     <div id="jquerypages"></div>
     <script>
         apeendElement("script", "/moduleresources/scripts/init.js");
-        apeendElement("script", "/moduleresources/scripts/home.js");
-        apeendElement("script", "/moduleresources/scripts/session/menu.js");
+        apeendElement("script", "/moduleresources/scripts/seguridad/seguridad-home.js");
+        apeendElement("script", "/moduleresources/scripts/seguridad/seguridad-menu.js");
     </script>
 
     <style>

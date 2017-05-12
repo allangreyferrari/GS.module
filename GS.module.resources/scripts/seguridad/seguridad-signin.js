@@ -3,11 +3,9 @@
     if (navigator.userAgent.search("Firefox") > -1) {
         $("#logo-gs").attr('src', '../../../moduleresources/images/logo-grupo-silvestre-b.png');
     }
-
-    showError(localStorage.getItem('session'));
-    //validar si el localStorage esta activo
+    sysname = 'Seguridad';
     getSession();
-
+    getLocation();
     $("#btnEntry").click(function () {
         var isValid = true;
         if (isValid) {
@@ -32,10 +30,8 @@
                 processData: false,
                 cache: false,
                 success: function (response) {
-                    if (response.Transaction.Type == 0)
-                    {
-                        if (response.Rows.length > 0)
-                        {
+                    if (response.Transaction.Type == 0) {
+                        if (response.Rows.length > 0) {
                             localStorage.setItem('session', response.Rows[0].v01);
                             window.location.replace(response.Rows[0].v02);
                         }
@@ -47,16 +43,49 @@
                     showError(response);
                     return false;
                 }
-            })
+            });
         }
     });
 });
 
 var session;
 function getSession() {
-    $.getJSON(wsnode + "wsCommon.svc/ObtenerSessionID", function (data) {
-        session = data;
-    });
+    $("#inUser").focus();
+    if (localStorage.getItem('session') == null) {
+        $.getJSON(wsnode + "wsCommon.svc/ObtenerSessionID", function (data) {
+            session = data;
+        });
+    }
+    else {
+        var params = JSON.stringify({
+            "key": "0ksP++T9gr8=",
+            "parametros": [localStorage.getItem('session')],
+            "cryp": []
+        });
+        $.ajax({
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            url: wsnode + "wsCommon.svc/ListarBasicTwo",
+            dataType: "json",
+            data: params,
+            async: true,
+            processData: false,
+            cache: false,
+            success: function (response) {
+                if (response.Transaction.Type == 0) {
+                    if (response.Rows.length > 0) {
+                        window.location.replace(response.Rows[0].v02);
+                    }
+                }
+                else
+                    showError(response.Transaction.Message);
+            },
+            error: function (response) {
+                showError(response);
+                return false;
+            }
+        });
+    }
 }
 
 $(window).resize(function () {

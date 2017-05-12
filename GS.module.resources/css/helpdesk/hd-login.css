@@ -1,6 +1,6 @@
 body
 {    
-    background-image:url("https://intranet.gruposilvestre.com.pe/resources/images/bg-body-b.jpg");
+    background-image:url("../../../moduleresources/images/bg-body-b.jpg");
     background-repeat: no-repeat;
     background-position: 85% 45px ;
     /*
@@ -19,7 +19,7 @@ body
    
 @font-face {
   font-family: "CorbelGS";
-  src: url('https://intranet.gruposilvestre.com.pe/resources/fonts/corbel.ttf');
+  src: url('../../../moduleresources/fonts/corbel.ttf');
 }
 
 p
@@ -43,7 +43,7 @@ hr
 .sig-content
 {
 	/*
-    background-image:url("https://intranet.gruposilvestre.com.pe/resources/images/bg-sig-form.jpg");
+    background-image:url("../../../moduleresources/images/bg-sig-form.jpg");
 	*/
     background-repeat: no-repeat;
     background-position: 50% 1px ;
@@ -88,13 +88,13 @@ hr
 
 #logo-gs
 {
-    content:url(https://intranet.gruposilvestre.com.pe/resources/images/logo-grupo-silvestre-b.png);    
+    content:url(../../../moduleresources/images/logo-grupo-silvestre-b.png);    
     height: 85pt;
 }
 
 #logo-gs::before
 {
-    content:url(https://intranet.gruposilvestre.com.pe/resources/images/logo-grupo-silvestre-b.png);    
+    content:url(../../../moduleresources/images/logo-grupo-silvestre-b.png);    
     height: 85pt;
 	display: block;
 }
@@ -112,21 +112,21 @@ hr
 .sig-section-body
 {
 	/*border: 2px solid #a1a1a1;*/
-	background-image:url("https://intranet.gruposilvestre.com.pe/resources/images/bg-blue.png");
+	background-image:url("../../../moduleresources/images/bg-blue.png");
     border-radius: 0px 0px 10px 10px ;
 }
 
 .sig-section-header
 {
 	/*border: 2px solid #a1a1a1;*/
-	background-image:url("https://intranet.gruposilvestre.com.pe/resources/images/bg-white.png");
+	background-image:url("../../../moduleresources/images/bg-white.png");
     border-radius: 10px 10px 0px 0px;
 }
 
 .sig-section-footer
 {
 	/*border: 2px solid #a1a1a1;*/
-	background-image:url("https://intranet.gruposilvestre.com.pe/resources/images/bg-white.png");
+	background-image:url("../../../moduleresources/images/bg-white.png");
     border-radius:  0px 0px 10px 10px;
 	margin-top: 3px;
 }
@@ -134,7 +134,7 @@ hr
 
 .sig-buttom:hover
 {
-    background-image:url("https://intranet.gruposilvestre.com.pe/resources/images/bg-yellow.png");
+    background-image:url("../../../moduleresources/images/bg-yellow.png");
     /*background-color:#428BCA;*/
     text-shadow: 1px 1px 3px #666666;
     color: #ffffff;
@@ -152,7 +152,7 @@ hr
 {    
     /*background-image:url("/Content/images/bg-green.png");
     background-color:#585858;*/
-	background-image:url("https://intranet.gruposilvestre.com.pe/resources/images/bg-green.png");
+	background-image:url("../../../moduleresources/images/bg-green.png");
     -webkit-border-radius: 4;
     -moz-border-radius: 4;
     border-radius: 4px;

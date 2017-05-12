@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{235DBB86-3255-4D1D-B764-4B05A363D7E2}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GS.module.library</RootNamespace>
     <AssemblyName>GS.module.library</AssemblyName>
@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +51,12 @@
     <Content Include="DataAccess\Microsoft.Practices.ServiceLocation.dll" />
     <Content Include="DataAccess\Microsoft.Practices.Unity.dll" />
     <Content Include="DataAccess\Microsoft.Practices.Unity.Interception.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GS.module.entities\GS.module.entities.csproj">
+      <Project>{94ece3d0-3a52-4190-ace2-9c86f8ec037c}</Project>
+      <Name>GS.module.entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,5 @@
-﻿var rootInit = "http://localhost";
+﻿//var rootInit = "http://localhost";
+var rootInit = "http://192.168.0.103";
 function apeendElement(type, url) {
     switch (type) {
         case "css":
