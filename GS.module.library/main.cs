@@ -6,7 +6,7 @@
     {
         public static void Main()
         {
-            string key = "@@module@@";                        
+            string key = "@@module@@";                         
             Console.WriteLine("*Ingrese una opción:\n* (1-Encriptar Default) - (2- Encriptar Personalizar)");
             Console.WriteLine("* (3-Desencriptar Default) - (4- Desencriptar Personalizar)");
             var opcion = Console.ReadLine();
