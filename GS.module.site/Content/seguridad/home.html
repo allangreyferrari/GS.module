@@ -68,7 +68,11 @@
     <br />
     <input type="hidden" id="selectrow" value="0" />
     <input type="hidden" id="selectestado" value="0" />
-    <div class="container-fluid" id="pages"></div>
+    <div class="container-fluid" id="pages">
+        <script>
+            $("#pages").load("configuracion/viewSistema.html");
+        </script>
+    </div>
     <div id="headerpages"></div>
     <div id="jquerypages"></div>
     <script>

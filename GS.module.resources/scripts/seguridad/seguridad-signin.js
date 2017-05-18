@@ -5,7 +5,7 @@
     }
     sysname = 'Seguridad';
     getSession();
-    getLocation();
+    //getLocation();
     $("#btnEntry").click(function () {
         var isValid = true;
         if (isValid) {
