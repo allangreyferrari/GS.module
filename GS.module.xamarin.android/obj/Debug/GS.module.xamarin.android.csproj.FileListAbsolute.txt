@@ -1,8 +1,3 @@
-C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\res\layout\main.xml
-C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\res\values\strings.xml
-C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\res\drawable\icon.png
-C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\R.cs.flag
-C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\uploadflags.txt
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\bin\Debug\GS.module.xamarin.android.dll
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\bin\Debug\GS.module.xamarin.android.pdb
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\bin\Debug\GS.module.xamarin.android.apk
@@ -10,5 +5,10 @@ C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\bin\Debug\GS.module.xama
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\GS.module.xamarin.android.dll
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\GS.module.xamarin.android.pdb
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\android\bin\GS.module.xamarin.android.apk
+C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\res\layout\main.xml
+C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\res\values\strings.xml
+C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\res\drawable\icon.png
+C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\R.cs.flag
+C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\uploadflags.txt
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\GS.module.xamarin.android.dll.mdb
 C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\bin\Debug\GS.module.xamarin.android.dll.mdb
