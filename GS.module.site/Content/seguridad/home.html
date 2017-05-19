@@ -66,71 +66,13 @@
         </nav>
     </header>
     <br />
-    <input type="hidden" id="selectrow" value="0" />
-    <input type="hidden" id="selectestado" value="0" />
-    <div class="container-fluid" id="pages">
-        <script>
-            $("#pages").load("configuracion/viewSistema.html");
-        </script>
-    </div>
     <div id="headerpages"></div>
     <div id="jquerypages"></div>
-    <script>
-        apeendElement("script", "/moduleresources/scripts/init.js");
-        apeendElement("script", "/moduleresources/scripts/seguridad/seguridad-home.js");
-        apeendElement("script", "/moduleresources/scripts/seguridad/seguridad-menu.js");
-    </script>
-
-    <style>
-        .modal-loading {
-            position: absolute !important;
-            z-index: 99999 !important;
-        }
-
-        .k-loading-mask {
-            z-index: 2 !important;
-        }
-
-        .modal-static {
-            position: fixed;
-            top: 50% !important;
-            left: 50% !important;
-            margin-top: -100px;
-            margin-left: -100px;
-            overflow: visible !important;
-            z-index: 99999 !important;
-        }
-
-            .modal-static,
-            .modal-static .modal-dialog,
-            .modal-static .modal-content {
-                width: 200px;
-                height: 200px;
-                /*background-color:transparent;*/
-            }
-
-                .modal-static .modal-dialog,
-                .modal-static .modal-content {
-                    padding: 0 !important;
-                    margin: 0 !important;
-                    /*background-color:transparent;*/
-                }
-
-                    .modal-static .modal-content .icon {
-                    }
-    </style>
-    <!-- Static Modal -->
-    <div class="modal modal-static fade" id="processingModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="text-center">
-                        <img src="https://intranet.gruposilvestre.com.pe/resources/images/gears.gif" style="width: 50px; height: 50px;" />
-                        <center><label class="pad-control text-uppercase">Cargando...</label></center>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid" id="pages">
     </div>
+    <script>
+            apeendElement("script", "/moduleresources/scripts/init.js");
+            apeendElement("script", "/moduleresources/scripts/seguridad/seguridad-menu.js");
+    </script>
 </body>
 </html>

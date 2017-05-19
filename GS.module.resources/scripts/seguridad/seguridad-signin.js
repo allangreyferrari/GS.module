@@ -33,7 +33,10 @@
                     if (response.Transaction.Type == 0) {
                         if (response.Rows.length > 0) {
                             localStorage.setItem('session', response.Rows[0].v01);
-                            window.location.replace(response.Rows[0].v02);
+                            var homeRoot = response.Rows[0].v02.split("@");
+                            if (homeRoot.Length == 2)
+                                pgnode = homeRoot[1];
+                            window.location.replace(homeRoot[0]);
                         }
                     }
                     else
@@ -74,7 +77,10 @@ function getSession() {
             success: function (response) {
                 if (response.Transaction.Type == 0) {
                     if (response.Rows.length > 0) {
-                        window.location.replace(response.Rows[0].v02);
+                        var homeRoot = response.Rows[0].v02.split("@");
+                        if (homeRoot.Length==2)
+                            pgnode = homeRoot[1];
+                        window.location.replace(homeRoot[0]);
                     }
                 }
                 else

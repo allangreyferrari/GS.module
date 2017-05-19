@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $("#filtroEstado").attr("src","../resources/images/check.png");
+    $("#filtroEstado").attr("src","../../../moduleresources/images/check.png");
     $("#filtroboolEstado").val("true");
     ListarSistemas();
 });
@@ -8,12 +8,12 @@ function CambiarEstado()
 {    
     if($("#PopupSistemaboolEstado").val() == "true")
     {
-        $("#PopupSistemaEstado").attr("src","../resources/images/uncheck.png");
+        $("#PopupSistemaEstado").attr("src", "../../../moduleresources/images/uncheck.png");
         $("#PopupSistemaboolEstado").val("false");
     }
     else
     {
-        $("#PopupSistemaEstado").attr("src","../resources/images/check.png");
+        $("#PopupSistemaEstado").attr("src", "../../../moduleresources/images/check.png");
         $("#PopupSistemaboolEstado").val("true");
     }
 }
@@ -22,12 +22,12 @@ function CambiarFiltroEstado()
 {    
     if($("#filtroboolEstado").val() == "true")
     {
-        $("#filtroEstado").attr("src","../resources/images/uncheck.png");
+        $("#filtroEstado").attr("src", "../../../moduleresources/images/uncheck.png");
         $("#filtroboolEstado").val("false");
     }
     else
     {
-        $("#filtroEstado").attr("src","../resources/images/check.png");
+        $("#filtroEstado").attr("src", "../../../moduleresources/images/check.png");
         $("#filtroboolEstado").val("true");
     }
 }
@@ -35,37 +35,45 @@ function CambiarFiltroEstado()
 function EditarSistema(id)
 {
     var params = JSON.stringify({
-	"oe":{
-		 "id" : id,
-		 "nombre" : "",
-		 "descripcion" : "",
-		 "key" : "",
-         "poolname" : "",
-		 "estado" : false
-		}
-	});
+        "key": "PIV8o1/cmq0=",
+        "parametros":
+            [
+                id,
+                "",
+                "",
+                0,
+                localStorage.getItem('session')
+            ],
+        "cryp": []
+    });
+
     $.ajax({
         type: "POST",
-        url: wsnode + "wsConfiguracion.svc/ListarSistemas",
+        url: wsnode + "wsCommon.svc/ListarBasicTen",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: params,
-        async: false,
-        processData: false,
+        async: true,
+        processData: true,
         cache: false,
-        success: function (response) {            
+        success: function (response) {
+            if (response.Transaction.Type == 1)
+                showError(response.Transaction.Message);
+            if (response.NroRows = 0)
+                showError("Ocurrio un error al interntar recuperar el registro");
+       
             $("#PopupSistemaHeader").html("<i class=\"fa fa-pencil\">&nbsp;</i> Editar Sistema");    
-            $("#PopupSistemaId").val(response.Rows[0].id);
-            $("#PopupSistemaNombre").val(response.Rows[0].nombre);
-            $("#PopupSistemaDescripcion").val(response.Rows[0].descripcion);
-            $("#PopupSistemaKey").val(response.Rows[0].key);
-            $("#PopupSistemaPassword").val(response.Rows[0].password);
-            $("#PopupSistemaPoolName").val(response.Rows[0].poolname);
-            $("#PopupSistemaFileconfig").val(response.Rows[0].fileconfig);
-            $("#PopupSistemaEncriptado").val(response.Rows[0].password_concatenado);                        
-            $("#PopupSistemaEstado").attr("src",response.Rows[0].icono_estado);
-            $("#PopupSistemaboolEstado").val(response.Rows[0].estado);
-            $("#PopupSistemaEncriptado").prop("disabled", false);  
+            $("#PopupSistemaId").val(response.Rows[0].v01);
+            $("#PopupSistemaNombre").val(response.Rows[0].v02);
+            $("#PopupSistemaDescripcion").val(response.Rows[0].v03);
+            $("#PopupSistemaKey").val(response.Rows[0].v05);
+            $("#PopupSistemaPoolName").val(response.Rows[0].v07);
+            $("#PopupSistemaFileconfig").val(response.Rows[0].v08);
+            //$("#PopupSistemaEncriptado").val("id: " + response.Rows[0].v10 + "\n" + "pass: " + response.Rows[0].v04);
+            $("#PopupSistemaEstado").attr("src", response.Rows[0].v09);
+            $("#PopupSistemaboolEstado").val(response.Rows[0].v06);
+            //$("#PopupSistemaEncriptado").prop("disabled", false);
+            $("#PopupSistemaPassword").prop("disabled", true);
             $("#PopupSistema").modal("show");  
         },
         error: function (response) {
@@ -148,10 +156,10 @@ function RegistrarSistema()
     $("#PopupSistemaPassword").val("");
     $("#PopupSistemaPoolName").val("");
     $("#PopupSistemaFileconfig").val("");
-    $("#PopupSistemaEncriptado").val("");   
+    //$("#PopupSistemaEncriptado").val("");   
     $("#PopupSistemaEstado").attr("src","../resources/images/uncheck.png");
     $("#PopupSistemaboolEstado").val("false");
-    $("#PopupSistemaEncriptado").prop("disabled", true);  
+    //$("#PopupSistemaEncriptado").prop("disabled", true);  
     $("#PopupSistema").modal("show");     
 }
 
@@ -161,87 +169,86 @@ function ListarSistemas() {
         "parametros": 
             [
                 0, 
-                $("#filtroNombre").val() == ""? null:$("#filtroNombre").val(),
-                $("#filtroDescripcion").val() == ""? null:$("#filtroDescripcion").val(),
-                $("#filtroboolEstado").val() == "" ? 0 : parseInt($("#filtroNombre").val()),
+                $("#filtroNombre").val(),
+                $("#filtroDescripcion").val(),
+                0, //$("#filtroboolEstado").val() == "" ? 0 : parseInt($("#filtroboolEstado").val()),
                 localStorage.getItem('session')
             ],
         "cryp": []
     });
-    $("#gridpadre").kendoGrid({
-        dataSource: {
-        type: "json",
+    //showError(localStorage.getItem('session'));
+    var dsgridpadre = new kendo.data.DataSource({
         transport: {
             read: function (options) {
                 $.ajax({
                     type: "POST",
-                    contentType: 'application/json; charset=utf-8',
                     url: wsnode + "wsCommon.svc/ListarBasicTen",
+                    contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     data: params,
-                    async: false,
-                    processData: false,
+                    async: true,
+                    processData: true,
                     cache: false,
                     success: function (response) {
-                        options.success(response.Rows);
+                        if (response.Transaction.Type == 1)
+                            showError(response.Transaction.Message);
+                        if (response.NroRows > 0)
+                            dsgridpadre.pageSize(20);
+                        options.success(response.Rows);                                                
                     },
-                    error: function (err) {
-                    }
+                    error: function (err) { }
                 });
-            },
-            pageSize: 20
+            }
         }
-    }
-        ,
+    });
+
+    $("#gridpadre").kendoGrid({
+        dataSource: dsgridpadre,
         height: 340,    
         groupable: false,
-        sortable: true,
+        sortable: false,
         selectable: true,
         resizable: true,
         pageable: {
             refresh: true,
-            pageSizes: true,
+            pageSizes: [10, 20, 'All'],
             buttonCount: 5
         },
         columns: [
         {
-            field: "id",
+            field: "v01",
             title: "Código",
             hidden: true
         },
         {
             template:
-            "<div class=\"home-buttom\" onclick=\"EditarSistema('#: id #'); return false;\">"+
-                "<center><i class=\"fa fa-pencil\">&nbsp;</i></center>"+
-            "</div>",
+                "<div style='cursor:pointer'><center><i class=\"fa fa-pencil\" onclick=\"EditarSistema('#: v01 #'); return false;\">&nbsp;</i></center></div>",
             field: "icono_estado",
-            title: " ",
+            title:
+                "<div style='cursor:pointer'><center><i class='fa fa-plus' onclick='RegistrarSistema(); return false;'>&nbsp;</i></center></div>",
             width: 70
         }, 
         {
-            field: "nombre",
+            field: "v02",
             title: "Nombre",
             width: 180
         }, {
-            field: "descripcion",
+            field: "v03",
             title: "Descripcion",
             width: 300
         },
         {
-            field: "key",
+            field: "v05",
             title: "Key",
             width: 120
         }, 
         {
-            template: "<center><input type=\"image\" src=\"#: icono_estado #\" style=\"width:17px\" /></center>",
-            field: "icono_estado",
+            template: "<center><input type=\"image\" src=\"#: v09 #\" style=\"width:17px\" /></center>",
+            field: "v09",
             title: "Activo",
             width: 70
         }
 		]
     });
-    var grid = $('#gridpadre').data('kendoGrid');
-    grid.dataSource.pageSize(10);
-    grid.dataSource.page(1); 
-    grid.dataSource.read();
+
 }

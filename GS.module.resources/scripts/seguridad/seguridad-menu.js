@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
     $("#hreflogo").append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
     $.ajax({
         type: "GET",
@@ -39,9 +40,13 @@
             return false;
         }
     });
+    if (pgnode != '/')
+        OpenPage(pgnode);
+    else
+        OpenPage("configuracion/viewSistema.html");
 });
 
-function OpenPage(namepage) {
+function OpenPage(namepage) {    
     $("#pages").load(namepage);
 }
 
@@ -65,6 +70,7 @@ function closedsession() {
             if (response.Transaction.Type == 0) {
                 if (response.Rows.length > 0) {
                     localStorage.removeItem('session');
+                    pgnode = '/';
                     window.location.replace(response.Rows[0].v01);
                 }
             }
