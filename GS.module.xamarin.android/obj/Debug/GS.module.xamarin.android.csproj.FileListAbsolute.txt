@@ -54,4 +54,4 @@ C:\Data\Starup\GS.module.xamarin.android\obj\Debug\android\assets\System.Service
 C:\Data\Starup\GS.module.xamarin.android\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Data\Starup\GS.module.xamarin.android\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
 C:\Data\Starup\GS.module.xamarin.android\obj\Debug\GS.module.xamarin.android.dll.mdb
-C:\Data\Starup\GS.module.xamarin.android\bin\Debug\GS.module.xamarin.android.dll.mdb
+C:\Data\Dev\Startup\GS.module\GS.module.xamarin.android\obj\Debug\GS.module.xamarin.android.csprojResolveAssemblyReference.cache
