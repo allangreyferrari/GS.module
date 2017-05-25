@@ -1,5 +1,6 @@
 ﻿namespace GS.module.services
 {
+    using entities.Base;
     using entities.Primary;
     using System.ServiceModel;
     using System.ServiceModel.Web;
@@ -75,9 +76,16 @@
         BasicHundredCollection ListarBasicHundred(string key, object[] parametros, object[] cryp = null);
         #endregion
 
+        #region Session
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "ObtenerSessionID", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string ObtenerSessionID();
+        #endregion
+
+        #region Transaction
+        Transaction EjecutarTransaction(string key, object[] parametros, object[] cryp = null);
+        #endregion
+
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace GS.module.services
 {
+    using entities.Base;
     using entities.Primary;
     using logic.Common;
     using System.Collections.Generic;
@@ -83,10 +84,20 @@
             return new blCommon().ListarBasicHundred(key, parametros.ToList(), cryp.ToList());
         }
         #endregion
+
+        #region Session
         public string ObtenerSessionID()
         {
             return HttpContext.Current.Session.SessionID;
         }
+        #endregion
+
+        #region Transaction
+        public Transaction EjecutarTransaction(string key, object[] parametros, object[] cryp = null)
+        { 
+            return new blCommon().EjecutarTransaction(key, parametros.ToList(), cryp.ToList());
+        }
+        #endregion
         ~wsCommon() { }
     }
 }

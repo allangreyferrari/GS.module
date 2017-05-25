@@ -5,6 +5,7 @@ var wsnode = 'http://localhost/moduleservices/contract/';
 //var wsnode = 'http://192.168.0.103/moduleservices/contract/';
 var pgnode = '/';
 var sysname = '';
+var argument = '';
 
 function appendScriptChild(url)
 {
