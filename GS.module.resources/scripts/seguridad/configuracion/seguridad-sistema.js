@@ -156,11 +156,15 @@ function RegistrarSistema()
     $("#PopupSistemaPassword").val("");
     $("#PopupSistemaPoolName").val("");
     $("#PopupSistemaFileconfig").val("");
-    //$("#PopupSistemaEncriptado").val("");   
     $("#PopupSistemaEstado").attr("src","../resources/images/uncheck.png");
-    $("#PopupSistemaboolEstado").val("false");
-    //$("#PopupSistemaEncriptado").prop("disabled", true);  
+    $("#PopupSistemaboolEstado").val("false"); 
     $("#PopupSistema").modal("show");     
+}
+
+function MostrarOpciones(id)
+{
+    argument = id;
+    $("#pages").load('configuracion/viewSistemaOpcion.html');
 }
 
 function ListarSistemas() {
@@ -176,7 +180,6 @@ function ListarSistemas() {
             ],
         "cryp": []
     });
-    //showError(localStorage.getItem('session'));
     var dsgridpadre = new kendo.data.DataSource({
         transport: {
             read: function (options) {
@@ -222,17 +225,23 @@ function ListarSistemas() {
         },
         {
             template:
-                "<div style='cursor:pointer'><center><i class=\"fa fa-pencil\" onclick=\"EditarSistema('#: v01 #'); return false;\">&nbsp;</i></center></div>",
-            field: "icono_estado",
+                "<div title='Editar Sistema' style='cursor:pointer'><center><i class=\"fa fa-pencil\" onclick=\"EditarSistema('#: v01 #'); return false;\">&nbsp;</i></center></div>",
+            field: "v01",
             title:
-                "<div style='cursor:pointer'><center><i class='fa fa-plus' onclick='RegistrarSistema(); return false;'>&nbsp;</i></center></div>",
-            width: 70
-        }, 
+                "<div title='Registrar Sistema' style='cursor:pointer'><center><i class='fa fa-plus' onclick='RegistrarSistema(); return false;'>&nbsp;</i></center></div>",
+            width: 50
+        },
+        {
+            template:
+                "<div title='Opciones del Sistema' style='cursor:pointer'><center><i class=\"fa fa-list-ol\" onclick=\"MostrarOpciones('#: v01 #'); return false;\">&nbsp;</i></center></div>",
+            width: 50
+        },
         {
             field: "v02",
             title: "Nombre",
             width: 180
-        }, {
+        },
+        {
             field: "v03",
             title: "Descripcion",
             width: 300
@@ -250,5 +259,4 @@ function ListarSistemas() {
         }
 		]
     });
-
 }

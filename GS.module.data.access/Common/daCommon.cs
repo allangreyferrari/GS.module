@@ -760,6 +760,28 @@ namespace GS.module.data.access.Common
         }
         #endregion
 
+        public bool EjecutarTransaction(string key, List<object> input, List<object> cryp = null)
+        {
+            bool result;
+            Query query;
+            Transaction transaction;
+            try
+            {
+                query = InitDB(key);
+                query.Input = input;
+                foreach (var value in cryp)
+                    query.Input.Add(Helper.Desencriptar(query.Password, value.ToString()));
+                result = Convert.ToBoolean(new dao().ExecuteTransactions(query));
+                return result;
+            }
+            catch (Exception ex)
+            {
+                result = false;
+                query = null;
+                throw new System.ArgumentException(ex.Message);
+            }
+        }
+
         ~daCommon() { }
     }
 }

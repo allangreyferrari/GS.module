@@ -347,8 +347,30 @@
                 return ocol;
             }
         }
+        #endregion
+
+        public Transaction EjecutarTransaction(string key, List<object> parametros, List<object> cryp = null)
+        {
+            Transaction transaction;
+            daCommon da;
+            try
+            {
+                da = new daCommon();
+                if (da.EjecutarTransaction(key, parametros, cryp))
+                    transaction = Helper.GetTransaction(TypeTransaction.OK, "Se realizó la transacción satisfactoriamente");
+                else
+                    transaction = Helper.GetTransaction(TypeTransaction.OK, "La transacción no se completo...favor de revisar el log de errores");
+
+                return transaction;
+            }
+            catch (Exception ex)
+            {
+                da = null;
+                transaction = Helper.GetTransaction(TypeTransaction.ERR, ex.Message);
+                return transaction;
+            }
+        }
 
         ~blCommon() { }
-        #endregion
     }
 }
