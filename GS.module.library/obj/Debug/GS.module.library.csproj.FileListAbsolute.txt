@@ -7,7 +7,6 @@ C:\Data\Dev\Startup\GS.module\GS.module.library\bin\Debug\GS.module.library.pdb
 C:\Data\Dev\Startup\GS.module\GS.module.library\obj\Debug\GS.module.library.csprojResolveAssemblyReference.cache
 C:\Data\Dev\Startup\GS.module\GS.module.library\obj\Debug\GS.module.library.pdb
 C:\Data\Dev\Startup\GS.module\GS.module.library\bin\Debug\GS.module.entities.dll
-C:\Data\Dev\Startup\GS.module\GS.module.library\bin\Debug\GS.module.entities.pdb
 C:\Data\Dev\Startup\GS.module\GS.module.library\bin\Debug\GS.module.library.exe
 C:\Data\Dev\Startup\GS.module\GS.module.library\obj\Debug\GS.module.library.exe
 C:\Data\Starup\GS.module.library\obj\Debug\GS.module.library.csprojResolveAssemblyReference.cache

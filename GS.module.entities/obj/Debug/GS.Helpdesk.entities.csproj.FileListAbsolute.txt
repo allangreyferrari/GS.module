@@ -1,9 +1,0 @@
-C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\bin\Debug\GS.Helpdesk.entities.dll
-C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\bin\Debug\GS.Helpdesk.entities.pdb
-C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\obj\Debug\GS.Helpdesk.entities.dll
-C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\obj\Debug\GS.Helpdesk.entities.pdb
-C:\Data\Desarrollo\TFS\GS.Content\GS.Helpdesk.entities\obj\Debug\GS.Helpdesk.entities.csprojResolveAssemblyReference.cache
-C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\bin\Debug\GS.Helpdesk.entities.dll
-C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\bin\Debug\GS.Helpdesk.entities.pdb
-C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\obj\Debug\GS.Helpdesk.entities.dll
-C:\Data\Dev\Innovacion\GS.Content\GS.Helpdesk.entities\obj\Debug\GS.Helpdesk.entities.pdb

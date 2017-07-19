@@ -40,6 +40,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GS.module.data.access, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GS.module.library\Componentes\GS.module.data.access.dll</HintPath>
+    </Reference>
+    <Reference Include="GS.module.entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GS.module.library\Componentes\GS.module.entities.dll</HintPath>
+    </Reference>
+    <Reference Include="GS.module.logic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GS.module.library\Componentes\GS.module.logic.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
@@ -115,22 +127,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\module.services.pubxml" />
+    <None Include="Properties\PublishProfiles\moduleservices.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GS.module.entities\GS.module.entities.csproj">
-      <Project>{94ece3d0-3a52-4190-ace2-9c86f8ec037c}</Project>
-      <Name>GS.module.entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GS.module.logic\GS.module.logic.csproj">
-      <Project>{f069f33b-8aa2-4ba0-a8be-3742ab9fad43}</Project>
-      <Name>GS.module.logic</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

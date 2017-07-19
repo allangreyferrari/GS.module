@@ -33,6 +33,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GS.module.entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Componentes\GS.module.entities.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,17 +50,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Componentes\GS.module.data.access.dll" />
+    <Content Include="Componentes\GS.module.entities.dll" />
+    <Content Include="Componentes\GS.module.logic.dll" />
     <Content Include="DataAccess\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
     <Content Include="DataAccess\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
     <Content Include="DataAccess\Microsoft.Practices.ServiceLocation.dll" />
     <Content Include="DataAccess\Microsoft.Practices.Unity.dll" />
     <Content Include="DataAccess\Microsoft.Practices.Unity.Interception.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GS.module.entities\GS.module.entities.csproj">
-      <Project>{94ece3d0-3a52-4190-ace2-9c86f8ec037c}</Project>
-      <Name>GS.module.entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

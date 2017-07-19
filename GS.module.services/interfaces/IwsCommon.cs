@@ -83,6 +83,8 @@
         #endregion
 
         #region Transaction
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "EjecutarTransaction", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         Transaction EjecutarTransaction(string key, object[] parametros, object[] cryp = null);
         #endregion
 

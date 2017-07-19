@@ -2,25 +2,61 @@
     $("#filtroEstado").attr("src","../../../moduleresources/images/check.png");
     $("#filtroboolEstado").val("true");
 
+    CrearCombo($("#filtroSistema"), "v02", "v01", "contains", '100%',
+        JSON.stringify({ "key": "JJH0EIutAFQ=", "parametros": [], "cryp": [] }), argument, 
+        function (e) {
+            if (e.item) {
+                var dataItem = this.dataItem(e.item);
+                $("#PopupOpcionSistema").val(dataItem.v01);
+                $("#PopupOpcionSistemaNombre").val(dataItem.v02);   
+            }
+            else {
+                showError("No se obtuvo los datos al seleccionar el sistema");
+            }
+        },
+        function (e) {
+            var filter = e.filter;
+            showError("filtroSistema" + filter);
+        });
+
     CrearCombo($("#PopupOpcionNivel"), "v02", "v01", "contains", '100%',
-        JSON.stringify({ "key": "ZsH4bynJgWs=", "parametros": [1], "cryp": [] }), null);
+        JSON.stringify({ "key": "ZsH4bynJgWs=", "parametros": [1], "cryp": [] }), -1, null,
+        function (e) {
+            var filter = e.filter;
+            showError("PopupOpcionNivel" + filter);
+        });
+
+    CrearCombo($("#PopupOpcionPadre"), "v02", "v01", "contains", '100%',
+        JSON.stringify({ "key": "PqIdqlGPDGE=", "parametros": [0], "cryp": [] }), -1, null,
+        function (e) {
+            var filter = e.filter;
+            showError("PopupOpcionPadre" + filter);
+        })
 
     CrearCombo($("#PopupOpcionFormaMostrar"), "v02", "v01", "contains", '100%',
-        JSON.stringify({ "key": "ZsH4bynJgWs=", "parametros": [2], "cryp": [] }), null);
-
-    var OnSelectTipoImagen = function onSelect(e) {
-        if (e.item) {
-            var dataItem = this.dataItem(e.item);
-            $("#PopupOpcionContentImagen").empty();
-            EvaluarContenedorImagen(dataItem.v01);
-        }
-        else {
-            showError("No se obtuvo los datos de la selección");
-        }
-    }
+        JSON.stringify({ "key": "ZsH4bynJgWs=", "parametros": [2], "cryp": [] }), -1, null,
+        function (e) {
+            var filter = e.filter;
+            showError("PopupOpcionFormaMostrar" + filter);
+        });
 
     CrearCombo($("#PopupOpcionTipoImagen"), "v02", "v01", "contains", '100%',
-        JSON.stringify({ "key": "ZsH4bynJgWs=", "parametros": [3], "cryp": [] }), OnSelectTipoImagen);
+        JSON.stringify({ "key": "ZsH4bynJgWs=", "parametros": [3], "cryp": [] }), -1,
+        function (e) {
+            if (e.item) {
+                var dataItem = this.dataItem(e.item);
+                $("#PopupOpcionContentImagen").empty();
+                EvaluarContenedorImagen(dataItem.v01);
+            }
+            else {
+                showError("No se obtuvo los datos de la selección");
+            }
+        },
+        function (e) {
+            var filter = e.filter;
+            showError("PopupOpcionTipoImagen" + filter);
+        });
+
 
     $("#PopupOpcionImagen").kendoUpload();
     $("#PopupOpcionIndice").mask('999');
@@ -29,7 +65,18 @@
         $(document).off('focusin.modal');
     });
 
+    setTimeout(
+        function () {
+            $("#PopupOpcionSistemaNombre").val($("#filtroSistema").data("kendoDropDownList").dataItem().v02);
+        }, 1000);
+    
     ListarOpciones(argument);
+    
+});
+
+$('#PopupOpcionNivel').change(function () {
+    CrearCombo($("#PopupOpcionPadre"), "v02", "v01", "contains", '100%',
+        JSON.stringify({ "key": "PqIdqlGPDGE=", "parametros": [$("#PopupOpcionNivel").val()], "cryp": [] }), null, null)
 });
 
 
@@ -52,6 +99,11 @@ function EvaluarContenedorImagen(data)
                 "<span class=\"input-group-addon\" style=\"width:120px\">Imagen 3</span><input type=\"text\" id=\"PopupOpcionImagen\" class=\"form-control\" />"
             )
             break;
+        case "-1":
+            $("#PopupOpcionContentImagen").append(
+                "<span class=\"input-group-addon\" style=\"width:120px\">Imagen -1</span><input type=\"text\" id=\"PopupOpcionImagen\" class=\"form-control\" />"
+            )
+            break;
         default:
             $("#PopupOpcionContentImagen").append(
                 "<span class=\"input-group-addon\" style=\"width:120px\">Imagen 4</span><input type=\"text\" id=\"PopupOpcionImagen\" class=\"form-control\" />"
@@ -62,15 +114,15 @@ function EvaluarContenedorImagen(data)
 
 function CambiarEstado()
 {    
-    if($("#PopupSistemaboolEstado").val() == "true")
+    if ($("#PopupOpcionboolEstado").val() == "true")
     {
-        $("#PopupSistemaEstado").attr("src", "../../../moduleresources/images/uncheck.png");
-        $("#PopupSistemaboolEstado").val("false");
+        $("#PopupOpcionEstado").attr("src", "../../../moduleresources/images/uncheck.png");
+        $("#PopupOpcionboolEstado").val("false");
     }
     else
     {
-        $("#PopupSistemaEstado").attr("src", "../../../moduleresources/images/check.png");
-        $("#PopupSistemaboolEstado").val("true");
+        $("#PopupOpcionEstado").attr("src", "../../../moduleresources/images/check.png");
+        $("#PopupOpcionboolEstado").val("true");
     }
 }
 
@@ -138,35 +190,44 @@ function EditarOpcion(id)
 function GuardarOpcion()
 {
     var params = JSON.stringify({
-        "key": $("#PopupOpcionId").val() == "0" ? "KpJCdc9cdSs=" : "KpJCdc9cdSs=",
+        "key": "KpJCdc9cdSs=",
         "parametros":
             [
-                0,
-                $("#filtroNombre").val(),
-                $("#filtroDescripcion").val(),
-                0, //$("#filtroboolEstado").val() == "" ? 0 : parseInt($("#filtroboolEstado").val()),
+                parseInt($("#PopupOpcionId").val()),
+                $("#PopupOpcionNombre").val(),
+                $("#PopupOpcionRuta").val(),
+                $("#PopupOpcionPadre").val()=="" ? 0 : parseInt($("#PopupOpcionPadre").val()),
+                parseInt($("#PopupOpcionSistema").val()),
+                parseInt($("#PopupOpcionNivel").val()),
+                parseInt($("#PopupOpcionFormaMostrar").val()),
+                parseInt($("#PopupOpcionTipoImagen").val()),
+                $("#PopupOpcionImagen").val(),
+                $("#PopupOpcionDescripcion").val(),
+                parseInt($("#PopupOpcionIndice").val()),
+                JSON.parse($("#PopupOpcionboolEstado").val()),
                 localStorage.getItem('session')
             ],
         "cryp": []
     });
     $.ajax({
         type: "POST",
-        url: wsnode + "wsCommon.svc/ListarBasicTen",
+        url: wsnode + "wsCommon.svc/EjecutarTransaction",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: params,
-        async: false,
+        async: true,
         processData: false,
         cache: false,
         success: function (transaction) { 
-            if(transaction.type==0)
-                showSuccess(transaction.message);
+            if(transaction.type==1)
+                showSuccess(transaction.Message);
             else
-                showError(transaction.message);
-            $("#PopupSistema").modal("hide");  
-            ListarSistemas();
+                showError(transaction.Message);
+            $("#PopupOpcion").modal("hide");
+            ListarOpciones(argument);
         },
         error: function (transaction) {
+            showError(JSON.stringify(transaction.Message));
         }
     });
 }
@@ -198,7 +259,7 @@ function RegresarSistemas()
 }
 
 function ListarOpciones(id) {
-    
+    $("#gridpadre").empty();
     var params = JSON.stringify({
         "key": "PIV8o1/cmq0=",
         "parametros":

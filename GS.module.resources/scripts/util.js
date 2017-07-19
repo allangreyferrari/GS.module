@@ -1,4 +1,4 @@
-﻿function CrearCombo(InputControl, Text, Value, Filter, Width, Params, OnSelect)
+﻿function CrearCombo(InputControl, Text, Value, Filter, Width, Params, SetValue, OnSelect, OnFiltering)
 {
     InputControl.kendoDropDownList({
         filter: Filter,
@@ -6,7 +6,7 @@
         dataValueField: Value,
         width: Width,
         select: OnSelect,
-        value: "",
+        filtering: OnFiltering,
         dataSource: {
             type: "json",
             transport: {
@@ -23,10 +23,10 @@
                         success: function (response) {
                             if (response.Transaction.Type == 1)
                                 showError(response.Transaction.Message);
-                            options.success(response.Rows);
+                            options.success(response.Rows);      
                         },
                         error: function (response) {
-                            showError(response);
+                            showError(JSON.stringify(response));
                         }
 
                     });
@@ -34,4 +34,7 @@
             }
         }
     });
+    InputControl.data("kendoDropDownList").value(SetValue);
+    showError(InputControl.val());
 }
+    
